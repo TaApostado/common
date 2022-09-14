@@ -27,18 +27,18 @@ func NewNotificator() *Notificator {
 	return &Notificator{notifications: []Notification{}}
 }
 
-func (n Notificator) HasNotifications() bool {
+func (n *Notificator) HasNotifications() bool {
 	return len(n.notifications) > 0
 }
 
-func (n *Notificator) AddNotification(notification *Notification) {
+func (n *Notificator) AddNotification(notification Notification) {
 	if n.notifications == nil {
 		n.notifications = []Notification{}
 	}
-	n.notifications = append(n.notifications, *notification)
+	n.notifications = append(n.notifications, notification)
 }
 
-func (n Notificator) Notifications() string {
+func (n *Notificator) Notifications() string {
 	var sb strings.Builder
 	var notification Notification
 	index := 0

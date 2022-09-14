@@ -12,12 +12,12 @@ func TestAddNewNotification(t *testing.T) {
 		t, len(notificator.notifications),
 		0, "new notificator should has 0 notification`s")
 
-	notificator.AddNotification(NewNotification("context", "some error..."))
+	notificator.AddNotification(*NewNotification("context", "some error..."))
 	assert.Equal(
 		t, len(notificator.notifications),
 		1, "after add one notification notificator should has 1 notification`s")
 
-	notificator.AddNotification(NewNotification("context", "some error..."))
+	notificator.AddNotification(*NewNotification("context", "some error..."))
 	assert.Equal(
 		t, len(notificator.notifications),
 		2, "after add one notification notificator should has 2 notification`s")
