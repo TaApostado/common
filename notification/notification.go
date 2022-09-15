@@ -61,7 +61,6 @@ func (n *Notificator) Notifications() string {
 		index++
 	}
 
-	fmt.Println(index)
 	notification = n.notifications[index]
 	sb.WriteString(
 		fmt.Sprintf("%s: %s", notification.context, notification.message))
